@@ -59,6 +59,12 @@
     <Compile Include="Controllers\DBController.cs" />
     <Compile Include="Controllers\HTMLController.cs" />
     <Compile Include="DataBase\DataBaseContext.cs" />
+    <Compile Include="Migrations\202311170424336_InitialCreate.cs" />
+    <Compile Include="Migrations\202311170424336_InitialCreate.designer.cs">
+      <DependentUpon>202311170424336_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\TPUDirectionOfTraining.cs" />
     <Compile Include="Models\TPUSchool.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,6 +72,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202311170424336_InitialCreate.resx">
+      <DependentUpon>202311170424336_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
