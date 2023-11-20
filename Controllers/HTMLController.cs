@@ -9,7 +9,8 @@ namespace AIS_LAB6.Controllers
 {
     public class HTMLController
     {
-        private string html = @"https://tpu.ru/university/schools/";
+        private const string html = @"https://tpu.ru/university/schools/";
+
         public List<Models.TPUSchool> GetTPUSchools()
         {
             List<Models.TPUSchool> TPUSchools = new List<Models.TPUSchool>();

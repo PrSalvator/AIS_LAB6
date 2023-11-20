@@ -8,38 +8,37 @@ namespace AIS_LAB6
 {
     class Program
     {
+        private static Controllers.ViewConroller viewController = new Controllers.ViewConroller();
         static void Main(string[] args)
         {
-            Controllers.DBController dBController = new Controllers.DBController();
-
-            Controllers.HTMLController htmlController = new Controllers.HTMLController();
-
-            List<Models.TPUSchool> tpuSchools;
-
-            try
+            while (true)
             {
-                tpuSchools = htmlController.GetTPUSchools();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                Console.WriteLine("Для завершения нажмитие на любую кнопку");
-                Console.ReadKey();
-                return;
-            }
-
-            foreach (Models.TPUSchool school in tpuSchools)
-            {
-                Console.WriteLine(school.Name);
-                Console.WriteLine(school.Address);
-                Console.WriteLine(school.Tel);
                 Console.WriteLine();
-
-                dBController.Insert(school);
+                Console.WriteLine("Нажмите 1, чтобы вывести все школы");
+                Console.WriteLine("Нажмите 2, чтобы вывести все направления");
+                Console.WriteLine("Нажмите 3, чтобы вывести направления определенной школы");
+                Console.WriteLine("Нажмите esc для выхода");
+                Console.WriteLine();
+                var button = Console.ReadKey(true).Key;
+                switch (button)
+                {
+                    case ConsoleKey.Escape:
+                        return;
+                    case ConsoleKey.D1:
+                        viewController.PrintSchools();
+                        break;
+                    case ConsoleKey.D2:
+                        viewController.PrintDirections();
+                        break;
+                    case ConsoleKey.D3:
+                        viewController.PrintDirectionsOfSchool();
+                        break;
+                    default:
+                        Console.Write("Неизвестный ввод");
+                        Console.WriteLine();
+                        break;
+                }
             }
-
-            Console.WriteLine("Для завершения нажмитие на любую кнопку");
-            Console.ReadKey();
         }
     }
 }

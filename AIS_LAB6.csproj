@@ -58,10 +58,15 @@
   <ItemGroup>
     <Compile Include="Controllers\DBController.cs" />
     <Compile Include="Controllers\HTMLController.cs" />
+    <Compile Include="Controllers\ViewConroller.cs" />
     <Compile Include="DataBase\DataBaseContext.cs" />
     <Compile Include="Migrations\202311170424336_InitialCreate.cs" />
     <Compile Include="Migrations\202311170424336_InitialCreate.designer.cs">
       <DependentUpon>202311170424336_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311190850482_AddDirectionsOfTrainingTable.cs" />
+    <Compile Include="Migrations\202311190850482_AddDirectionsOfTrainingTable.designer.cs">
+      <DependentUpon>202311190850482_AddDirectionsOfTrainingTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\TPUDirectionOfTraining.cs" />
@@ -76,6 +81,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202311170424336_InitialCreate.resx">
       <DependentUpon>202311170424336_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311190850482_AddDirectionsOfTrainingTable.resx">
+      <DependentUpon>202311190850482_AddDirectionsOfTrainingTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
